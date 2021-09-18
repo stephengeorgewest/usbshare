@@ -3,8 +3,8 @@
 [Switch via WebHID](https://stephengeorgewest.github.io/usbshare/WebHID)
 
 Usb sharing switch came with "drivers", an exe called "USBShare.exe". The active port connects to the internal hub, while all the other ports connect to a device "VID_1A86&PID_E041". That device switches to whichever port sends an HID report '5502000000000000' on interface 1.
-<code><pre>
-Frame 31356: 44 bytes on wire (352 bits), 44 bytes captured (352 bits) on interface wireshark_extcap2440, id 0
+<pre><code>Frame 31356: 44 bytes on wire (352 bits),
+             44 bytes captured (352 bits) on interface wireshark_extcap2440, id 0
 USB URB
     [Source: host]
     [Destination: 2.4.0]
@@ -41,4 +41,4 @@ Setup Data
     wIndex: 0 (0x0000)
     wLength: 8
     Data Fragment: 5502000000000000
-</pre></code>
+</code></pre>
