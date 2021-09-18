@@ -1,6 +1,6 @@
 <h1>USBShare.exe</h1>
 
-[Switch via WebHID](https://stephengeorgewest.github.io/usbshare/)
+[Switch via WebHID](https://stephengeorgewest.github.io/usbshare/WebHID)
 
 Usb sharing switch came with "drivers", an exe called "USBShare.exe". The active port connects to the internal hub, while all the other ports connect to a device "VID_1A86&PID_E041". That device switches to whichever port sends an HID report '5502000000000000' on interface 1.
 <code><pre>
