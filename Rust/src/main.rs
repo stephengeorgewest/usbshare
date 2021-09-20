@@ -9,7 +9,12 @@ fn main() {
 			for device in api.device_list() {
 				if device.vendor_id() == 0x1a86 && device.product_id() == 0xe041 {
 					found = true;
-					println!("{:04x}:{:04x}, {:?}", device.vendor_id(), device.product_id(), device.serial_number());
+					println!("{:04x}:{:04x}, {:?}, {:?}",
+						device.vendor_id(),
+						device.product_id(),
+						device.serial_number(),
+						device.path()
+					);
 					
 					match device.open_device(&api){
 						Ok(hid_device) => {

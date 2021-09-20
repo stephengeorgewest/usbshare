@@ -1,5 +1,0 @@
-# Allow access to hidraw*
-KERNEL=="hidraw*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e041", MODE="0664", GROUP="plugdev"
-
-# Allow access to all usb systems
-SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="e041", MODE="0664", GROUP="plugdev"​
