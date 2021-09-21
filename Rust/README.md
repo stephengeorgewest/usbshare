@@ -1,0 +1,1 @@
+Build for windows dependencies listed in https://crates.io/crates/windres, I compiled winth rc.exe from a windows 10 kit.

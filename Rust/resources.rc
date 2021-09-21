@@ -1,6 +1,11 @@
-// hello-world.rc
+// usbswitch.rc
 
+// Default Application Icon is MAINICON or ICON resource with the lowest ID
+// https://stackoverflow.com/questions/2393863/set-an-exe-icon-for-my-program
+// https://docs.microsoft.com/en-us/windows/win32/menurc/about-icons
+// https://docs.microsoft.com/en-us/windows/win32/menurc/icon-resource
 MAINICON ICON "USBSwitch.ico"
+// Tray Icons should be 16x16
 TRAYREADYICON ICON "tray_ready.ico"
 TRAYMISSINGICON ICON "tray_missing.ico"
 TRAYERRORICON ICON "tray_error.ico"

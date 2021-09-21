@@ -1,3 +1,4 @@
+<img src="./USBSwitch.svg" style="float:right;width:25em; margin: auto;" />
 <h1>USBShare.exe</h1>
 
 [Switch via WebHID](https://stephengeorgewest.github.io/usbshare/WebHID)
