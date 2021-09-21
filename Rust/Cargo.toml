@@ -1,9 +1,13 @@
 [package]
 name = "usbshare"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
+build="build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 hidapi = "1.2.6"
+tray-item = "0.5.0-alpha"
+
+[target.'cfg(windows)'.build-dependencies]
+windres = "0.2.2"

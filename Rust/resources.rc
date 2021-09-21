@@ -1,0 +1,6 @@
+// hello-world.rc
+
+MAINICON ICON "USBSwitch.ico"
+TRAYREADYICON ICON "tray_ready.ico"
+TRAYMISSINGICON ICON "tray_missing.ico"
+TRAYERRORICON ICON "tray_error.ico"

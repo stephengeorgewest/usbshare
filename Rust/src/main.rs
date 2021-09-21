@@ -1,8 +1,30 @@
 extern crate hidapi;
 
 use hidapi::HidApi;
+use tray_item::TrayItem;
 
 fn main() {
+	match TrayItem::new("Sharing Switch", "TRAYMISSINGICON"){
+		Ok(mut tray) => {
+			tray.add_menu_item("Switch", || {
+				switch();
+			}).unwrap();
+
+			tray.add_menu_item("Quit", || {
+				println!("Quit");
+				std::process::exit(0);
+			}).unwrap();
+
+			tray.set_icon("TRAYREADYICON").unwrap();
+
+			std::io::stdin().read_line(&mut String::new()).unwrap();
+		},
+		Err(e) => {
+			eprintln!("tray creation error: {}", e);
+		}
+	}
+}
+fn switch() {
 	let mut found = false;
 	match HidApi::new() {
 		Ok(api) => {
