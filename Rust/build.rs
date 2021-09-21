@@ -6,7 +6,7 @@ use windres::Build;
 
 #[cfg(windows)]
 fn main() { 
-	Build::new().compile("resources.rc").unwrap();
+	Build::new().compile("resources/resources.rc").unwrap();
 }
 
 #[cfg(not(windows))]
