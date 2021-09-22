@@ -22,16 +22,16 @@ fn main() {
 			}).unwrap();
 
 			tray.set_icon("TRAYMISSINGICON").unwrap();
+
+			#[cfg(windows)]
+			std::io::stdin().read_line(&mut String::new()).unwrap();
+			#[cfg(not(windows))]
+			gtk::main();
 		},
 		Err(e) => {
 			eprintln!("tray creation error: {}", e);
 		}
 	}
-
-	#[cfg(not(windows))]
-	gtk::main();
-	#[cfg(windows)]
-	std::io::stdin().read_line(&mut String::new()).unwrap();
 }
 fn switch() {
 	let mut found = false;
