@@ -1,5 +1,7 @@
 #[cfg(windows)]
 extern crate windres;
+#[cfg(not(windows))]
+extern crate gio;
 
 #[cfg(windows)]
 use windres::Build;
@@ -10,4 +12,10 @@ fn main() {
 }
 
 #[cfg(not(windows))]
-fn main() {}
+fn main() {
+	gio::compile_resources(
+		"resources",
+		"resources/resources.xml",
+		"compiled.gresource",
+	);
+}
