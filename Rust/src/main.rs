@@ -1,14 +1,14 @@
 extern crate hidapi;
 
 use hidapi::HidApi;
-use tray_item::TrayItem;
+use tray_item::{TrayItem, IconSource};
 #[cfg(not(windows))]
 use gtk;
 
 fn main() { 
 	#[cfg(not(windows))]
 	gtk::init().unwrap();
-	match TrayItem::new("Sharing Switch", "TRAYMISSINGICON"){
+	match TrayItem::new("Sharing Switch", IconSource::Resource("TRAYMISSINGICON")){
 		Ok(mut tray) => {
 			tray.add_menu_item("Switch", || {
 				switch();
@@ -21,7 +21,7 @@ fn main() {
 				gtk::main_quit();
 			}).unwrap();
 
-			tray.set_icon("TRAYMISSINGICON").unwrap();
+			tray.set_icon(IconSource::Resource("TRAYMISSINGICON")).unwrap();
 
 			#[cfg(windows)]
 			std::io::stdin().read_line(&mut String::new()).unwrap();
